@@ -9,8 +9,21 @@ router.get('/calisthenics', (req, res) => {
   res.render('index', { text: 'Calisthenics' });
 });
 
-router.get('/:id', (req, res) => {
-  res.send(`Get training plan with ID ${req.params.id}`);
+router
+  .route('/:id')
+  .get((req, res) => {
+    res.send(`Get training plan with ID ${req.params.id}`);
+  })
+  .post((req, res) => {
+    res.send(`Get training plan with ID ${req.params.id}`);
+  })
+  .delete((req, res) => {
+    res.send(`Get training plan with ID ${req.params.id}`);
+  });
+
+router.param('id', (req, res, next, id) => {
+    console.log(id)
+  next();
 });
 
 module.exports = router;
