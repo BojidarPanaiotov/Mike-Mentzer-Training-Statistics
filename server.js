@@ -1,7 +1,3 @@
-const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/trainingRoutine');
-
 const express = require('express');
 const app = express();
 
