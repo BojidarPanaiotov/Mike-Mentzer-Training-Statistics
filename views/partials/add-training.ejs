@@ -1,0 +1,76 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-4">
+    <form>
+      <div class="mb-3">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Program Type</option>
+          <option value="1">Push</option>
+          <option value="2">Pull</option>
+          <option value="3">Leg</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="custom-program-type" class="form-label"
+          >Custom Program Type</label
+        >
+        <input type="text" class="form-control" id="custom-program-type" />
+      </div>
+      <div class="mb-3">
+        <label for="creation-date" class="form-label">Creation Date</label>
+        <input type="date" class="form-control" id="creation-date" />
+      </div>
+
+      <% for (var i =1; i <= locals.exerciseCount; i++ ) { %>
+      <div class="row">
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="exercise-<%= i %>" class="form-label"
+              >Exercise <%= i %>
+            </label>
+            <input type="text" class="form-control" id="exercise-<%= i %>" />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="exercise-<%= i %>-weight" class="form-label"
+              >Weight (kg)</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="exercise-<%= i %>-weight"
+              min="0"
+              max="1000" />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="exercise-<%= i %>-set" class="form-label">Sets</label>
+            <input
+              type="number"
+              class="form-control"
+              id="exercise-<%= i %>-set"
+              min="0"
+              max="1000" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <% for (var j =1; j <=6; j++ ) { %>
+        <div class="col-2">
+          <label for="exercise-one-rep-one" class="form-label">Reps</label>
+          <input
+            type="number"
+            class="form-control"
+            id="exercise-<%= i %>-reps-<%= j %>"
+            min="0"
+            max="1000" />
+        </div>
+        <% } %>
+      </div>
+      <% } %>
+
+      <button type="submit" class="btn btn-primary mt-5">Submit</button>
+    </form>
+  </div>
+</div>

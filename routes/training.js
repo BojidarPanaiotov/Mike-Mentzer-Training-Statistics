@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/gym', (req, res) => {
-  res.render('index', { page: 'gym' });
+router.get('/add-training', (req, res) => {
+  res.render('index', { page: 'add-training', exerciseCount: 7 });
 });
 
 router.get('/calisthenics', (req, res) => {
