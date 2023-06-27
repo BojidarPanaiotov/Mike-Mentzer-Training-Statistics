@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/gym', (req, res) => {
-  res.render('index', { text: 'Gym' });
+  res.render('index');
 });
 
 router.get('/calisthenics', (req, res) => {
-  res.render('index', { text: 'Calisthenics' });
+  res.render('index');
 });
 
 router
