@@ -7,7 +7,7 @@ app.use('/js',express.static('node_modules/bootstrap/dist/js'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.render('index', { text: 'Hello World' });
+  res.render('index', { page: 'homepage' });
 });
 
 const training = require('./routes/training');

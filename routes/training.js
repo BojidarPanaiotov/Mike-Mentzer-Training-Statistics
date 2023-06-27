@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/gym', (req, res) => {
-  res.render('index');
+  res.render('index', { page: 'gym' });
 });
 
 router.get('/calisthenics', (req, res) => {
-  res.render('index');
+  res.render('index', { page: 'calisthenics' });
 });
 
 router
@@ -22,7 +22,6 @@ router
   });
 
 router.param('id', (req, res, next, id) => {
-    console.log(id)
   next();
 });
 
