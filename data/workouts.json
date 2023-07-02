@@ -1,1 +1,48 @@
-{"workouts":[{"type":"","data":"","exercise-1":"","weight-1":"","reps-1":"","exercise-2":"","weight-2":"","reps-2":"","exercise-3":"","weight-3":"","reps-3":"","exercise-4":"","weight-4":"","reps-4":"","exercise-5":"","weight-5":"","reps-5":"","exercise-6":"","weight-6":"","reps-6":""},{"type":"","data":"","exercise-1":"","weight-1":"","reps-1":"","exercise-2":"","weight-2":"","reps-2":"","exercise-3":"","weight-3":"","reps-3":"","exercise-4":"","weight-4":"","reps-4":"","exercise-5":"","weight-5":"","reps-5":"","exercise-6":"","weight-6":"","reps-6":""},{"type":"assasa","data":"","exercise-1":"","weight-1":"","reps-1":"","exercise-2":"","weight-2":"","reps-2":"","exercise-3":"","weight-3":"","reps-3":"","exercise-4":"","weight-4":"","reps-4":"","exercise-5":"","weight-5":"","reps-5":"","exercise-6":"","weight-6":"","reps-6":""}]}
+{
+    "workouts": [
+        {
+            "type": "test",
+            "creation-date": "2023-07-05",
+            "exercise-1": "Pullups ",
+            "weight-1": "1",
+            "reps-1": "21",
+            "exercise-2": "",
+            "weight-2": "",
+            "reps-2": "",
+            "exercise-3": "",
+            "weight-3": "",
+            "reps-3": "",
+            "exercise-4": "",
+            "weight-4": "",
+            "reps-4": "",
+            "exercise-5": "",
+            "weight-5": "",
+            "reps-5": "",
+            "exercise-6": "",
+            "weight-6": "",
+            "reps-6": ""
+        },
+        {
+            "type": "test",
+            "creation-date": "2023-07-05",
+            "exercise-1": "Pullups ",
+            "weight-1": "1",
+            "reps-1": "21",
+            "exercise-2": "",
+            "weight-2": "",
+            "reps-2": "",
+            "exercise-3": "",
+            "weight-3": "",
+            "reps-3": "",
+            "exercise-4": "",
+            "weight-4": "",
+            "reps-4": "",
+            "exercise-5": "",
+            "weight-5": "",
+            "reps-5": "",
+            "exercise-6": "",
+            "weight-6": "",
+            "reps-6": ""
+        }
+    ]
+}

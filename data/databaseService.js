@@ -28,7 +28,15 @@ function addWorkout(newWorkout) {
   });
 }
 
+function getAll() {
+  const file = fs.readFileSync(databasePath);
+  const data = JSON.parse(file);
+
+  return data.workouts;
+}
+
 module.exports = {
   read,
-  addWorkout
+  addWorkout,
+  getAll
 };
