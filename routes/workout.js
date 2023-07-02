@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const databaseService = require('../data/databaseService');
 
 router.get('/calisthenics', (req, res) => {
   res.render('index', { page: 'calisthenics' });
@@ -11,7 +12,8 @@ router
     res.render('index', { page: 'forms/add-workout', exerciseCount: 6 });
   })
   .post((req, res) => {
-    res.send(req.body);
+    databaseService.addWorkout(req.body);
+    res.send('successfully');
   })
   .delete((req, res) => {
     //TODO:

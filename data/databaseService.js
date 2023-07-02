@@ -14,7 +14,7 @@ function read() {
   });
 }
 
-function add(newWorkout) {
+function addWorkout(newWorkout) {
   let file = fs.readFileSync(databasePath);
   let data = JSON.parse(file);
   console.log(data);
@@ -30,5 +30,5 @@ function add(newWorkout) {
 
 module.exports = {
   read,
-  add
+  addWorkout
 };
