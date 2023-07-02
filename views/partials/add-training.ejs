@@ -1,14 +1,6 @@
 <div class="row justify-content-center mt-5">
   <div class="col-4">
-    <form>
-      <div class="mb-3">
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Program Type</option>
-          <option value="1">Push</option>
-          <option value="2">Pull</option>
-          <option value="3">Leg</option>
-        </select>
-      </div>
+    <form accept="/training/add-training" method="POST">
       <div class="mb-3">
         <label for="custom-program-type" class="form-label"
           >Custom Program Type</label
@@ -44,29 +36,14 @@
           </div>
         </div>
         <div class="col-6">
-          <div class="mb-3">
-            <label for="exercise-<%= i %>-set" class="form-label">Sets</label>
-            <input
-              type="number"
-              class="form-control"
-              id="exercise-<%= i %>-set"
-              min="0"
-              max="1000" />
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <% for (var j =1; j <=6; j++ ) { %>
-        <div class="col-2">
           <label for="exercise-one-rep-one" class="form-label">Reps</label>
           <input
             type="number"
             class="form-control"
-            id="exercise-<%= i %>-reps-<%= j %>"
+            id="exercise-reps-"
             min="0"
             max="1000" />
         </div>
-        <% } %>
       </div>
       <% } %>
 
