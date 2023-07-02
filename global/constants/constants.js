@@ -1,5 +1,5 @@
 const EXERCISE_COUNT = 6;
-const TOP_EXERCISE_COUNT = 4;
+const TOP_EXERCISE_COUNT = 5;
 const DATABASE_PATH = 'data/workouts.json';
 
 module.exports = {

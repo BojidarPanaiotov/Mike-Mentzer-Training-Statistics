@@ -2,13 +2,18 @@ const express = require('express');
 const router = express.Router();
 const databaseService = require('../data/databaseService');
 const EXERCISE_COUNT = require('../global/constants/constants').EXERCISE_COUNT;
-const TOP_EXERCISE_COUNT = require('../global/constants/constants').TOP_EXERCISE_COUNT;
+const TOP_EXERCISE_COUNT =
+  require('../global/constants/constants').TOP_EXERCISE_COUNT;
 
 router.get('/statistics', (req, res) => {
+  console.log(databaseService.getMostRepsExercises(TOP_EXERCISE_COUNT));
   res.render('index', {
     page: 'statistics',
     workouts: databaseService.getAll(),
-    regularExercises: databaseService.getMostRegularExercises(TOP_EXERCISE_COUNT)
+    regularExercises:
+      databaseService.getMostRegularExercises(TOP_EXERCISE_COUNT),
+    repsExercises: databaseService.getMostRepsExercises(TOP_EXERCISE_COUNT),
+    totalExercises: databaseService.getTotalExercises()
   });
 });
 

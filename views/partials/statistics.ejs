@@ -1,6 +1,15 @@
 <h1>Total Workouts: <%= locals.workouts.length %></h1>
+<h1>Total Exercise Count: <%= locals.totalExercises %></h1>
+<br>
+<h1>Top (<%= locals.regularExercises.length %>)Most Regular Exercise</h1>
 <ol>
   <% for (var i =0; i < locals.regularExercises.length; i++ ) { %>
   <li><%= locals.regularExercises[i].name %> (<%= locals.regularExercises[i].count %> total sets)</li>
+  <% } %>
+</ol>
+<h1>Top (<%= locals.regularExercises.length %>)Most Reps on Exercise</h1>
+<ol>
+  <% for (var i =0; i < locals.repsExercises.length; i++ ) { %>
+  <li><%= locals.repsExercises[i].name %> (<%= locals.repsExercises[i].reps %> total reps)</li>
   <% } %>
 </ol>

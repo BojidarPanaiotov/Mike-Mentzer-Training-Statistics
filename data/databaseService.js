@@ -39,8 +39,44 @@ function getMostRegularExercises(top) {
   return exercises.sort((a, b) => (a.count > b.count ? -1 : 1)).slice(0, top);
 }
 
+function getMostRepsExercises(top) {
+  const allWorkouts = getAll();
+  const reps = [];
+
+  for (const workout of allWorkouts) {
+    for (const exercise of workout.exercises) {
+      if (reps.filter((w) => w.name === exercise.name).length === 0) {
+        const repsAsNumber = Number(exercise.reps);
+
+        reps.push({ name: exercise.name, reps: repsAsNumber });
+      } else {
+        const index = reps.findIndex((w) => w.name === exercise.name);
+        const repsAsNumber = Number(exercise.reps);
+
+        reps[index].reps += repsAsNumber;
+      }
+    }
+  }
+
+  return reps.sort((a, b) => (a.reps > b.reps ? -1 : 1)).slice(0, top);
+}
+
+function getTotalExercises() {
+  const allWorkouts = getAll();
+  let total = 0;
+
+  for (const workout of allWorkouts) {
+    const totalExercisesAsNumber = Number(workout.exercises.length);
+    total += totalExercisesAsNumber;
+  }
+
+  return total;
+}
+
 module.exports = {
   addWorkout,
   getAll,
-  getMostRegularExercises
+  getMostRegularExercises,
+  getMostRepsExercises,
+  getTotalExercises
 };
