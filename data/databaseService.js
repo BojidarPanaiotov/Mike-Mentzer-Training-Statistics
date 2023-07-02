@@ -1,25 +1,13 @@
-'use strict';
-
-const databasePath = 'data/workouts.json';
+const DATABASE_PATH = require('../global/constants/constants').DATABASE_PATH;
 const fs = require('fs');
 
-function read() {
-  fs.readFile(databasePath, (err, data) => {
-    if (err) {
-      throw err;
-    }
-
-    const workouts = JSON.parse(data);
-  });
-}
-
 function addWorkout(newWorkout) {
-  let file = fs.readFileSync(databasePath);
+  let file = fs.readFileSync(DATABASE_PATH);
   let data = JSON.parse(file);
   data.workouts.push(newWorkout);
 
   let newData = JSON.stringify(data);
-  fs.writeFile(databasePath, newData, (err) => {
+  fs.writeFile(DATABASE_PATH, newData, (err) => {
     if (err) {
       throw err;
     }
@@ -27,14 +15,13 @@ function addWorkout(newWorkout) {
 }
 
 function getAll() {
-  const file = fs.readFileSync(databasePath);
+  const file = fs.readFileSync(DATABASE_PATH);
   const data = JSON.parse(file);
 
   return data.workouts;
 }
 
 module.exports = {
-  read,
   addWorkout,
   getAll
 };

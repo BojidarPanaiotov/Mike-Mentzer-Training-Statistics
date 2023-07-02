@@ -21,12 +21,9 @@ router
       req.body,
       EXERCISE_COUNT
     );
+
     databaseService.addWorkout(preparedData);
-    //TODO:
-    res.send('successfully');
-  })
-  .delete((req, res) => {
-    //TODO:
+    res.redirect('/');
   });
 
 router.param('id', (req, res, next, id) => {
