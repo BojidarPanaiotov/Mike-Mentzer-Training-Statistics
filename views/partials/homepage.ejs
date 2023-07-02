@@ -1,32 +1,34 @@
 <h1>Homepage</h1>
 
-<table class="styled-table">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Date</th>
-      <th>Exercise</th>
-      <th>Weight (kg)</th>
-      <th>Reps</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% for (var i =0; i < locals.workouts.length; i++ ) { %>
-    <tr>
-      <td><%= locals.workouts[i].type %></td>
-      <td><%= locals.workouts[i].date %></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <% for (var j =0; j < locals.workouts[i].exercises.length; j++ ) { %>
-    <tr>
-      <td></td>
-      <td></td>
-      <td><%= locals.workouts[i].exercises[j].name %></td>
-      <td><%= locals.workouts[i].exercises[j].weight %></td>
-      <td><%= locals.workouts[i].exercises[j].reps %></td>
-    </tr>
-    <% } %> <% } %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Exercise</th>
+            <th>Weight (kg)</th>
+            <th>Reps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i =0; i < locals.workouts.length; i++ ) { %>
+          <tr>
+            <td colspan="4">
+              <%= locals.workouts[i].type %> (<%= locals.workouts[i].date %>)
+            </td>
+          </tr>
+          <% for (var j =0; j < locals.workouts[i].exercises.length; j++ ) { %>
+          <tr>
+            <td></td>
+            <td><%= locals.workouts[i].exercises[j].name %></td>
+            <td><%= locals.workouts[i].exercises[j].weight %></td>
+            <td><%= locals.workouts[i].exercises[j].reps %></td>
+          </tr>
+          <% } %> <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,43 +1,43 @@
 {
     "workouts": [
         {
-            "type": "test",
-            "date": "2023-07-18",
+            "type": "Pull",
+            "date": "2023-07-19",
             "exercises": [
                 {
-                    "name": "asd",
-                    "weight": "5",
-                    "reps": "5"
+                    "name": "Pull",
+                    "weight": "50",
+                    "reps": "7"
                 },
                 {
-                    "name": "dsadsa",
-                    "weight": "5",
-                    "reps": "5"
+                    "name": "Row",
+                    "weight": "3",
+                    "reps": "12"
                 }
             ]
         },
         {
-            "type": "test",
+            "type": "Legs",
             "date": "2023-07-18",
             "exercises": [
                 {
-                    "name": "asd",
-                    "weight": "5",
-                    "reps": "5"
+                    "name": "Squat",
+                    "weight": "10",
+                    "reps": "29"
                 },
                 {
-                    "name": "dsadsa",
+                    "name": "Dead Lift",
                     "weight": "5",
-                    "reps": "5"
+                    "reps": "4"
                 },
                 {
-                    "name": "dsadsa",
-                    "weight": "5",
-                    "reps": "5"
+                    "name": "Calf Rise",
+                    "weight": "50",
+                    "reps": "12"
                 },
                 {
-                    "name": "dsadsa",
-                    "weight": "5",
+                    "name": "Stand Calf Rise",
+                    "weight": "25",
                     "reps": "5"
                 }
             ]
