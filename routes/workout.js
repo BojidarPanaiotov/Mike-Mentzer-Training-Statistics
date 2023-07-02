@@ -6,9 +6,9 @@ router.get('/calisthenics', (req, res) => {
 });
 
 router
-  .route('/add-training')
+  .route('/add-workout')
   .get((req, res) => {
-    res.render('index', { page: 'add-training', exerciseCount: 6 });
+    res.render('index', { page: 'forms/add-workout', exerciseCount: 6 });
   })
   .post((req, res) => {
     res.send(req.body);
@@ -24,13 +24,13 @@ router.param('id', (req, res, next, id) => {
 router
   .route('/:id')
   .get((req, res) => {
-    res.send(`Get training plan with ID ${req.params.id}`);
+    res.send(`Get workout plan with ID ${req.params.id}`);
   })
   .post((req, res) => {
-    res.send(`Get training plan with ID ${req.params.id}`);
+    res.send(`Get workout plan with ID ${req.params.id}`);
   })
   .delete((req, res) => {
-    res.send(`Get training plan with ID ${req.params.id}`);
+    res.send(`Get workout plan with ID ${req.params.id}`);
   });
 
 router.param('id', (req, res, next, id) => {

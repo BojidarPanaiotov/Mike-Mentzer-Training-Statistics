@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   res.render('index', { page: 'homepage' });
 });
 
-const training = require('./routes/training');
-app.use('/training', training);
+const workout = require('./routes/workout');
+app.use('/workout', workout);
 
 app.listen(3000);
