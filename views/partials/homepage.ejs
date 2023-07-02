@@ -1,27 +1,32 @@
 <h1>Homepage</h1>
-<% for (var i =0; i < locals.workouts.length;  i++ ) { %>
-<br/>  <%= locals.workouts[i].type %> 
-<%#  will output the numbers 1-10 %>
-<% } %>
 
 <table class="styled-table">
-    <thead>
-        <tr>
-            <th>Type</th>
-            <th>Date</th>
-            <th>Exercise</th>
-            <th>Weight (kg)</th>
-            <th>Reps</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Workout Type</td>
-        </tr>
-        <tr class="active-row">
-            <td>Melissa</td>
-            <td>5150</td>
-        </tr>
-        <!-- and so on... -->
-    </tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Date</th>
+      <th>Exercise</th>
+      <th>Weight (kg)</th>
+      <th>Reps</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (var i =0; i < locals.workouts.length; i++ ) { %>
+    <tr>
+      <td><%= locals.workouts[i].type %></td>
+      <td><%= locals.workouts[i].date %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <% for (var j =0; j < locals.workouts[i].exercises.length; j++ ) { %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td><%= locals.workouts[i].exercises[j].name %></td>
+      <td><%= locals.workouts[i].exercises[j].weight %></td>
+      <td><%= locals.workouts[i].exercises[j].reps %></td>
+    </tr>
+    <% } %> <% } %>
+  </tbody>
 </table>

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const databaseService = require('../data/databaseService');
+const EXERCISE_COUNT = require('../global/constants/constants').EXERCISE_COUNT;
 
 router.get('/calisthenics', (req, res) => {
   res.render('index', { page: 'calisthenics' });
@@ -9,10 +10,19 @@ router.get('/calisthenics', (req, res) => {
 router
   .route('/add-workout')
   .get((req, res) => {
-    res.render('index', { page: 'forms/add-workout', exerciseCount: 6 });
+    res.render('index', {
+      page: 'forms/add-workout',
+      exerciseCount: EXERCISE_COUNT
+    });
   })
   .post((req, res) => {
-    databaseService.addWorkout(req.body);
+    const workoutHelpers = require('../global/scripts/workoutHelpers');
+    const preparedData = workoutHelpers.formatWorkoutData(
+      req.body,
+      EXERCISE_COUNT
+    );
+    databaseService.addWorkout(preparedData);
+    //TODO:
     res.send('successfully');
   })
   .delete((req, res) => {
