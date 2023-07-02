@@ -6,7 +6,6 @@ const TOP_EXERCISE_COUNT =
   require('../global/constants/constants').TOP_EXERCISE_COUNT;
 
 router.get('/statistics', (req, res) => {
-  console.log(databaseService.getMostRepsExercises(TOP_EXERCISE_COUNT));
   res.render('index', {
     page: 'statistics',
     workouts: databaseService.getAll(),
@@ -35,25 +34,5 @@ router
     databaseService.addWorkout(preparedData);
     res.redirect('/');
   });
-
-router.param('id', (req, res, next, id) => {
-  next();
-});
-
-router
-  .route('/:id')
-  .get((req, res) => {
-    res.send(`Get workout plan with ID ${req.params.id}`);
-  })
-  .post((req, res) => {
-    res.send(`Get workout plan with ID ${req.params.id}`);
-  })
-  .delete((req, res) => {
-    res.send(`Get workout plan with ID ${req.params.id}`);
-  });
-
-router.param('id', (req, res, next, id) => {
-  next();
-});
 
 module.exports = router;
