@@ -57,3 +57,7 @@ tr:hover {
   font-weight: bold;
   color: #009879;
 }
+
+td {
+  text-align: left;
+}

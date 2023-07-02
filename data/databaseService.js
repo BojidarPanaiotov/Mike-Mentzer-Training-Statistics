@@ -21,7 +21,26 @@ function getAll() {
   return data.workouts;
 }
 
+function getMostRegularExercises(top) {
+  const allWorkouts = getAll();
+  const exercises = [];
+
+  for (const workout of allWorkouts) {
+    for (const exercise of workout.exercises) {
+      if (exercises.filter((w) => w.name === exercise.name).length === 0) {
+        exercises.push({ name: exercise.name, count: 1 });
+      } else {
+        const index = exercises.findIndex((w) => w.name === exercise.name);
+        exercises[index].count++;
+      }
+    }
+  }
+
+  return exercises.sort((a, b) => (a.count > b.count ? -1 : 1)).slice(0, top);
+}
+
 module.exports = {
   addWorkout,
-  getAll
+  getAll,
+  getMostRegularExercises
 };

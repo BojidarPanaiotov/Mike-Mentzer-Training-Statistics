@@ -73,6 +73,80 @@
                     "reps": "15"
                 }
             ]
+        },
+        {
+            "type": "Pull",
+            "date": "2023-07-19",
+            "exercises": [
+                {
+                    "name": "Pull",
+                    "weight": "50",
+                    "reps": "7"
+                },
+                {
+                    "name": "Row",
+                    "weight": "3",
+                    "reps": "12"
+                }
+            ]
+        },
+        {
+            "type": "Legs",
+            "date": "2023-07-18",
+            "exercises": [
+                {
+                    "name": "Squat",
+                    "weight": "10",
+                    "reps": "29"
+                },
+                {
+                    "name": "Dead Lift",
+                    "weight": "5",
+                    "reps": "4"
+                },
+                {
+                    "name": "Calf Rise",
+                    "weight": "50",
+                    "reps": "12"
+                },
+                {
+                    "name": "Stand Calf Rise",
+                    "weight": "25",
+                    "reps": "5"
+                }
+            ]
+        },
+        {
+            "type": "Push",
+            "date": "2023-07-27",
+            "exercises": [
+                {
+                    "name": "Bench Press",
+                    "weight": "50",
+                    "reps": "6"
+                },
+                {
+                    "name": "Incline Bench Press",
+                    "weight": "30",
+                    "reps": "10"
+                },
+                {
+                    "name": "Shoulder Press",
+                    "weight": "40",
+                    "reps": "5"
+                }
+            ]
+        },
+        {
+            "type": "Leg",
+            "date": "2032-11-11",
+            "exercises": [
+                {
+                    "name": "Squat",
+                    "weight": "70",
+                    "reps": "15"
+                }
+            ]
         }
     ]
 }

@@ -1,0 +1,6 @@
+<h1>Total Workouts: <%= locals.workouts.length %></h1>
+<ol>
+  <% for (var i =0; i < locals.regularExercises.length; i++ ) { %>
+  <li><%= locals.regularExercises[i].name %> (<%= locals.regularExercises[i].count %> total sets)</li>
+  <% } %>
+</ol>
