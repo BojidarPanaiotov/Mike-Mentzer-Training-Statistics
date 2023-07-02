@@ -10,14 +10,12 @@ function read() {
     }
 
     const workouts = JSON.parse(data);
-    console.log(workouts);
   });
 }
 
 function addWorkout(newWorkout) {
   let file = fs.readFileSync(databasePath);
   let data = JSON.parse(file);
-  console.log(data);
   data.workouts.push(newWorkout);
 
   let newData = JSON.stringify(data);
