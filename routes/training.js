@@ -11,6 +11,7 @@ router
     res.render('index', { page: 'add-training', exerciseCount: 6 });
   })
   .post((req, res) => {
+    res.send(req.body);
   })
   .delete((req, res) => {
     //TODO:
