@@ -1,3 +1,9 @@
+/* Global */
+.main-container {
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
 /* Navigation */
 .navbar-nav {
   margin: 0 auto;
@@ -6,6 +12,7 @@
 .navbar-nav .nav-item {
   font-size: 2.5rem;
   margin: 0 2rem 0 2rem;
+  color: white;
 }
 
 /* Table */
