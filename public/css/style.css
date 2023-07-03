@@ -56,3 +56,8 @@
 td {
   text-align: left;
 }
+
+/* Statistics */
+.header-statistics {
+  min-height: 5rem;
+}
