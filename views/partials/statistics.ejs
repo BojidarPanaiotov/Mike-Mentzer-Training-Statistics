@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <h2 class="header-statistics">Top (<%= locals.regularExercises.length %>) Most Reps on Exercise</h2>
+      <h2 class="header-statistics">
+        Top (<%= locals.regularExercises.length %>) Most Reps on Exercise
+      </h2>
       <table class="styled-table">
         <thead>
           <tr>
@@ -22,7 +24,66 @@
       </table>
     </div>
     <div class="col-4">
-      <h2 class="header-statistics">Top (<%= locals.repsExercises.length %>) Most Reps on Exercise</h2>
+      <h2>Compare Two Workouts</h2>
+      <form action="">
+        <select class="js-compare-workouts-select form-select mt-5">
+          <option value="1">Chest & Back</option>
+          <option value="2">Legs & Abs</option>
+          <option value="3">Shoulders & Arms</option>
+        </select>
+        <button type="submit" class="js-compare-workouts btn btn-primary mt-5">Submit</button>
+      </form>
+    </div>
+    <div class="col-4">
+      <h2 class="header-statistics">Other Statistics</h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Goal</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Total Workouts</td>
+            <td><%= locals.workouts.length %></td>
+          </tr>
+          <tr>
+            <td>Total Exercise Done</td>
+            <td><%= locals.totalExercises %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <h2 class="header-statistics">
+        Top (<%= locals.regularExercises.length %>) Most Reps on Exercise
+      </h2>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Order</th>
+            <th>Exercise</th>
+            <th>Reps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i =0; i < locals.regularExercises.length; i++ ) { %>
+          <tr>
+            <td><%= i + 1 %></td>
+            <td><%= locals.regularExercises[i].name %></td>
+            <td><%= locals.regularExercises[i].count %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <h2 class="header-statistics">
+        Top (<%= locals.repsExercises.length %>) Most Reps on Exercise
+      </h2>
       <table class="styled-table">
         <thead>
           <tr>

@@ -2,15 +2,18 @@ const express = require('express');
 const router = express.Router();
 const databaseService = require('../data/databaseService');
 const EXERCISE_COUNT = require('../global/constants/constants').EXERCISE_COUNT;
-const TOP_EXERCISE_COUNT =
-  require('../global/constants/constants').TOP_EXERCISE_COUNT;
+const TOP_EXERCISE_COUNT = require('../global/constants/constants').TOP_EXERCISE_COUNT;
+
+router.get('/workouts', function (req, res) {
+  console.log(req.query);
+  res.json({ test: 1 });
+});
 
 router.get('/statistics', (req, res) => {
   res.render('index', {
     page: 'statistics',
     workouts: databaseService.getAll(),
-    regularExercises:
-      databaseService.getMostRegularExercises(TOP_EXERCISE_COUNT),
+    regularExercises: databaseService.getMostRegularExercises(TOP_EXERCISE_COUNT),
     repsExercises: databaseService.getMostRepsExercises(TOP_EXERCISE_COUNT),
     totalExercises: databaseService.getTotalExercises()
   });
@@ -26,10 +29,7 @@ router
   })
   .post((req, res) => {
     const workoutHelpers = require('../global/scripts/workoutHelpers');
-    const preparedData = workoutHelpers.formatWorkoutData(
-      req.body,
-      EXERCISE_COUNT
-    );
+    const preparedData = workoutHelpers.formatWorkoutData(req.body, EXERCISE_COUNT);
 
     databaseService.addWorkout(preparedData);
     res.redirect('/');
