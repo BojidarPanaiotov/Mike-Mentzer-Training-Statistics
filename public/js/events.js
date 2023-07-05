@@ -1,3 +1,5 @@
+const displayNoneClass = 'd-none';
+
 $(document).ready(function () {
   // Get workouts for comparison
   $('.js-compare-workouts').on('click', function (event) {
@@ -65,10 +67,21 @@ $(document).ready(function () {
             }
           }
 
-          $('.js-workout-1').removeClass('d-none');
-          $('.js-workout-2').removeClass('d-none');
+          $('.js-workout-1').removeClass(displayNoneClass);
+          $('.js-workout-2').removeClass(displayNoneClass);
         }
       }
     });
+  });
+
+  // Refresh comparison tables
+  $('.js-compare-workouts-select').on('change', function () {
+    $('.js-workout-header-1').empty();
+    $('.js-workout-header-2').empty();
+
+    $('.js-workout-1').addClass(displayNoneClass);
+    $('.js-workout-2').addClass(displayNoneClass);
+
+    $('.js-compare-workouts').prop('disabled', false);
   });
 });

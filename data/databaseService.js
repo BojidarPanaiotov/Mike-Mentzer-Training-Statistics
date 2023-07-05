@@ -79,39 +79,33 @@ function sortWorkoutsByDate(workouts) {
     const bComps = b.date.split('-');
     const aDate = new Date(aComps[0], Number(aComps[1]) - 1, aComps[2]);
     const bDate = new Date(bComps[0], Number(bComps[1]) - 1, bComps[2]);
-     return bDate.getTime() - aDate.getTime();
+    return bDate.getTime() - aDate.getTime();
   });
 }
 
 function sortByName(workouts) {
-  const workoutExerciseOne = [];
-  const singleExerciseOne = [];
-
-  const workoutExerciseTwo = [];
-  const singleExerciseTwo = [];
-
   if (workouts.length === 2) {
-    for (const exercise of workouts[0].exercises) {
-      const exerciseName = exercise.name;
-      const hasSameExercise = workouts[1].exercises.filter((e) => e.name === exerciseName);
+    const workoutExerciseOne = [];
+    const singleExerciseOne = [];
+  
+    const workoutExerciseTwo = [];
+    const singleExerciseTwo = [];
 
-      if (hasSameExercise.length) {
-        workoutExerciseOne.push(exercise);
-      } else {
-        singleExerciseOne.push(exercise);
+    const processWorkout = (exercisesOne, exercisesTwo, newExerciseArray) => {
+      for (const exercise of exercisesOne) {
+        const exerciseName = exercise.name;
+        const hasSameExercise = exercisesTwo.filter((e) => e.name === exerciseName);
+
+        if (hasSameExercise.length) {
+          newExerciseArray.push(exercise);
+        } else {
+          newExerciseArray.push(exercise);
+        }
       }
-    }
+    };
 
-    for (const exercise of workouts[1].exercises) {
-      const exerciseName = exercise.name;
-      const hasSameExercise = workouts[0].exercises.filter((e) => e.name === exerciseName);
-
-      if (hasSameExercise.length) {
-        workoutExerciseTwo.push(exercise);
-      } else {
-        singleExerciseTwo.push(exercise);
-      }
-    }
+    processWorkout(workouts[0].exercises, workouts[1].exercises, workoutExerciseOne);
+    processWorkout(workouts[1].exercises, workouts[0].exercises, workoutExerciseTwo);
 
     const sortFunction = function (a, b) {
       if (a.name < b.name) {
