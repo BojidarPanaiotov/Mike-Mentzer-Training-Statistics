@@ -6,11 +6,11 @@ const TOP_EXERCISE_COUNT = require('../global/constants/constants').TOP_EXERCISE
 
 router.get('/workouts', function (req, res) {
   const workoutNames = req.query.workouts;
-  const workouts = databaseService.getAll().filter(w => workoutNames.includes(w.type));
-  const workoutsSortedByName = databaseService.sortByName(workouts);
-  const workoutsSortedByDate = databaseService.sortWorkoutsByDate(workoutsSortedByName);
+  const workouts = databaseService.getAll().filter((w) => workoutNames.includes(w.type));
+  const workoutsSortedByDate = databaseService.sortWorkoutsByDate(workouts).slice(0,2);
+  const workoutsSortedByName = databaseService.sortByName(workoutsSortedByDate);
 
-  res.json({ workouts: workoutsSortedByDate });
+  res.json({ workouts: workoutsSortedByName });
 });
 
 router.get('/statistics', (req, res) => {

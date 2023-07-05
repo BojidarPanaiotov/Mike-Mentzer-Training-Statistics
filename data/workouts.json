@@ -167,6 +167,84 @@
                     "reps": "15"
                 }
             ]
+        },
+        {
+            "type": "Chest & Back",
+            "date": "2023-07-29",
+            "exercises": [
+                {
+                    "name": "Incline Bench Press",
+                    "weight": "50",
+                    "reps": "8"
+                },
+                {
+                    "name": "Bench Press",
+                    "weight": "33",
+                    "reps": "3"
+                },
+                {
+                    "name": "Shoulder Machine",
+                    "weight": "120",
+                    "reps": "6"
+                },
+                {
+                    "name": "Bench Decline",
+                    "weight": "50",
+                    "reps": "10"
+                }
+            ]
+        },
+        {
+            "type": "Chest & Back",
+            "date": "2023-08-10",
+            "exercises": [
+                {
+                    "name": "Incline Bench Press",
+                    "weight": "321",
+                    "reps": "53"
+                },
+                {
+                    "name": "Bench Press",
+                    "weight": "123",
+                    "reps": "33"
+                },
+                {
+                    "name": "Shoulder Machine",
+                    "weight": "213",
+                    "reps": "32"
+                },
+                {
+                    "name": "Bench Decline",
+                    "weight": "35",
+                    "reps": "23"
+                }
+            ]
+        },
+        {
+            "type": "Chest & Back",
+            "date": "2023-03-11",
+            "exercises": [
+                {
+                    "name": "Incline Bench Press",
+                    "weight": "32",
+                    "reps": "5"
+                },
+                {
+                    "name": "Bench Press",
+                    "weight": "53",
+                    "reps": "3"
+                },
+                {
+                    "name": "Shoulder Machine",
+                    "weight": "213",
+                    "reps": "3"
+                },
+                {
+                    "name": "Bench Decline",
+                    "weight": "51",
+                    "reps": "10"
+                }
+            ]
         }
     ]
 }
