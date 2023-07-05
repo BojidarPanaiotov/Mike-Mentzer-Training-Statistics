@@ -158,13 +158,54 @@
             ]
         },
         {
-            "type": "Leg",
+            "type": "Legs & Abs",
             "date": "2032-11-11",
             "exercises": [
                 {
                     "name": "Squat",
                     "weight": "70",
                     "reps": "15"
+                },
+                {
+                    "name": "Leg Press",
+                    "weight": "170",
+                    "reps": "8"
+                },
+                {
+                    "name": "Calf Rise",
+                    "weight": "70",
+                    "reps": "15"
+                },
+                {
+                    "name": "Hamstring Curl",
+                    "weight": "70",
+                    "reps": "15"
+                }
+            ]
+        },
+        {
+            "type": "Legs & Abs",
+            "date": "2032-11-11",
+            "exercises": [
+                {
+                    "name": "Squat",
+                    "weight": "60",
+                    "reps": "17"
+                },
+                {
+                    "name": "Leg Press",
+                    "weight": "170",
+                    "reps": "8"
+                },
+                {
+                    "name": "Calf Rise",
+                    "weight": "85",
+                    "reps": "15"
+                },
+                {
+                    "name": "Hamstring Curl",
+                    "weight": "75",
+                    "reps": "5"
                 }
             ]
         },

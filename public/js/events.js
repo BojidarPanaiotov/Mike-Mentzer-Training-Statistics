@@ -79,8 +79,8 @@ $(document).ready(function () {
     $('.js-workout-header-1').empty();
     $('.js-workout-header-2').empty();
 
-    $('.js-workout-1').addClass(displayNoneClass);
-    $('.js-workout-2').addClass(displayNoneClass);
+    $('.js-workout-1').addClass(displayNoneClass).find('tbody').empty();
+    $('.js-workout-2').addClass(displayNoneClass).find('tbody').empty();
 
     $('.js-compare-workouts').prop('disabled', false);
   });
