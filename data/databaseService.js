@@ -73,10 +73,22 @@ function getTotalExercises() {
   return total;
 }
 
+function sortWorkoutsByDate(workouts) {
+  return workouts.sort((a, b) => {
+    const aComps = a.date.split('-');
+    const bComps = b.date.split('-');
+    const aDate = new Date(aComps[0], aComps[2], aComps[1]);
+    const bDate = new Date(bComps[0], bComps[2], bComps[1]);
+
+    return aDate.getTime() - bDate.getTime();
+  });
+}
+
 module.exports = {
   addWorkout,
   getAll,
   getMostRegularExercises,
   getMostRepsExercises,
-  getTotalExercises
+  getTotalExercises,
+  sortWorkoutsByDate
 };

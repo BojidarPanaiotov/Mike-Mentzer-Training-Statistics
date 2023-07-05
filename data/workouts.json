@@ -60,6 +60,16 @@
                     "name": "Shoulder Press",
                     "weight": "40",
                     "reps": "5"
+                },
+                {
+                    "name": "Shoulder Machine",
+                    "weight": "100",
+                    "reps": "15"
+                },
+                {
+                    "name": "Triceps Cabel",
+                    "weight": "40",
+                    "reps": "7"
                 }
             ]
         },
@@ -118,27 +128,27 @@
         },
         {
             "type": "Chest & Back",
-            "date": "2023-07-27",
+            "date": "2023-07-26",
             "exercises": [
                 {
                     "name": "Bench Press",
                     "weight": "50",
-                    "reps": "6"
+                    "reps": "10"
                 },
                 {
                     "name": "Incline Bench Press",
                     "weight": "58",
-                    "reps": "10"
+                    "reps": "7"
                 },
                 {
                     "name": "Shoulder Press",
                     "weight": "43",
-                    "reps": "3"
+                    "reps": "6"
                 },
                 {
                     "name": "Shoulder Machine",
                     "weight": "100",
-                    "reps": "5"
+                    "reps": "13"
                 }
             ]
         },

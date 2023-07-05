@@ -19,7 +19,7 @@
 .styled-table {
   border-collapse: collapse;
   margin: 25px 0;
-  font-size: 0.9em;
+  font-size: 1.2em;
   font-family: sans-serif;
   width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -60,4 +60,30 @@ td {
 /* Statistics */
 .header-statistics {
   min-height: 5rem;
+}
+
+.comparison-low::after {
+  content: ' ↓';
+  color: red;
+  font-size: 1.8rem;
+}
+
+.comparison-high::after {
+  content: ' ↑';
+  color: green;
+  font-size: 1.8rem;
+}
+
+.comparison-same::after {
+  content: ' =';
+  color: blue;
+  font-size: 1.8rem;
+}
+
+.comparison {
+  text-align: right;
+}
+
+.comparison-options {
+  margin: 0 auto;
 }
