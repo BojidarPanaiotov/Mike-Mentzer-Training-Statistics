@@ -28,29 +28,35 @@ $(document).ready(function () {
             }
 
             $('.js-workout-header-' + (i + 1)).text(`${data.workouts[i].type} ${data.workouts[i].date}`);
+
             for (let j = 0; j < data.workouts[i].exercises.length; j++) {
               const currentExercise = data.workouts[i].exercises[j];
               const sameExercise = workoutToCompare.find((w) => w.name === currentExercise.name);
-              let classToApply = 'same';
+              let classToApplyForReps = 'same';
+              let classToApplyForWeights = 'same';
 
               if (sameExercise) {
-                const sameExerciseAsNumber = Number(sameExercise.reps);
-                const currentExerciseAsNumber = Number(currentExercise.reps);
+                const sameRepsExerciseAsNumber = Number(sameExercise.reps);
+                const currentRepsExerciseAsNumber = Number(currentExercise.reps);
 
-                if (sameExerciseAsNumber && currentExerciseAsNumber) {
-                  if (sameExerciseAsNumber > currentExerciseAsNumber) {
-                    classToApply = 'low';
-                  } else if (sameExerciseAsNumber < currentExerciseAsNumber) {
-                    classToApply = 'high';
-                  }
+                if (sameRepsExerciseAsNumber !== currentRepsExerciseAsNumber) {
+                  classToApplyForReps = sameRepsExerciseAsNumber > currentRepsExerciseAsNumber ? 'low' : 'high';
+                }
+
+                const sameWeightExerciseAsNumber = Number(sameExercise.weight);
+                const currentWeightExerciseAsNumber = Number(currentExercise.weight);
+
+                if (sameWeightExerciseAsNumber !== currentWeightExerciseAsNumber) {
+                  classToApplyForWeights = sameWeightExerciseAsNumber > currentWeightExerciseAsNumber ? 'low' : 'high';
                 }
               }
 
-              const tableRowMarkup = `<tr>
+              const tableRowMarkup = `
+              <tr>
                 <td>${j + 1}</td>
                 <td>${currentExercise.name}</td>
-                <td>${currentExercise.weight}</td>
-                <td class="comparison comparison-${classToApply}">${currentExercise.reps}</td>
+                <td class="comparison comparison-${classToApplyForWeights}">${currentExercise.weight}</td>
+                <td class="comparison comparison-${classToApplyForReps}">${currentExercise.reps}</td>
               </tr>`;
 
               $('.js-workout-' + (i + 1))

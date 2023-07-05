@@ -96,7 +96,7 @@ function sortByName(workouts) {
       const hasSameExercise = workouts[1].exercises.filter((e) => e.name === exerciseName);
 
       if (hasSameExercise.length) {
-        workoutExerciseOne.push(hasSameExercise[0]);
+        workoutExerciseOne.push(exercise);
       } else {
         singleExerciseOne.push(exercise);
       }
@@ -107,7 +107,7 @@ function sortByName(workouts) {
       const hasSameExercise = workouts[0].exercises.filter((e) => e.name === exerciseName);
 
       if (hasSameExercise.length) {
-        workoutExerciseTwo.push(hasSameExercise[0]);
+        workoutExerciseTwo.push(exercise);
       } else {
         singleExerciseTwo.push(exercise);
       }

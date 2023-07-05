@@ -9,7 +9,6 @@ router.get('/workouts', function (req, res) {
   const workouts = databaseService.getAll().filter((w) => workoutNames.includes(w.type));
   const workoutsSortedByDate = databaseService.sortWorkoutsByDate(workouts).slice(0,2);
   const workoutsSortedByName = databaseService.sortByName(workoutsSortedByDate);
-
   res.json({ workouts: workoutsSortedByName });
 });
 
