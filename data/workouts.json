@@ -43,7 +43,7 @@
             ]
         },
         {
-            "type": "Push",
+            "type": "Chest & Back",
             "date": "2023-07-27",
             "exercises": [
                 {
@@ -117,7 +117,7 @@
             ]
         },
         {
-            "type": "Push",
+            "type": "Chest & Back",
             "date": "2023-07-27",
             "exercises": [
                 {
@@ -127,12 +127,17 @@
                 },
                 {
                     "name": "Incline Bench Press",
-                    "weight": "30",
+                    "weight": "58",
                     "reps": "10"
                 },
                 {
                     "name": "Shoulder Press",
-                    "weight": "40",
+                    "weight": "43",
+                    "reps": "3"
+                },
+                {
+                    "name": "Shoulder Machine",
+                    "weight": "100",
                     "reps": "5"
                 }
             ]

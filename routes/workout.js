@@ -5,8 +5,10 @@ const EXERCISE_COUNT = require('../global/constants/constants').EXERCISE_COUNT;
 const TOP_EXERCISE_COUNT = require('../global/constants/constants').TOP_EXERCISE_COUNT;
 
 router.get('/workouts', function (req, res) {
-  console.log(req.query);
-  res.json({ test: 1 });
+  const workoutNames = req.query.workouts;
+  const workouts = databaseService.getAll().filter(w => workoutNames.includes(w.type));
+
+  res.json({ workouts: workouts });
 });
 
 router.get('/statistics', (req, res) => {

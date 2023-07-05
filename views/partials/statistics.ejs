@@ -1,10 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <h2 class="header-statistics">
-        Top (<%= locals.regularExercises.length %>) Most Reps on Exercise
-      </h2>
-      <table class="styled-table">
+      <table class="js-workout-1 styled-table">
         <thead>
           <tr>
             <th>Order</th>
@@ -13,13 +10,6 @@
           </tr>
         </thead>
         <tbody>
-          <% for (var i =0; i < locals.regularExercises.length; i++ ) { %>
-          <tr>
-            <td><%= i + 1 %></td>
-            <td><%= locals.regularExercises[i].name %></td>
-            <td><%= locals.regularExercises[i].count %></td>
-          </tr>
-          <% } %>
         </tbody>
       </table>
     </div>
@@ -35,23 +25,15 @@
       </form>
     </div>
     <div class="col-4">
-      <h2 class="header-statistics">Other Statistics</h2>
-      <table class="styled-table">
+      <table class="js-workout-2 styled-table">
         <thead>
           <tr>
-            <th>Goal</th>
-            <th>Total</th>
+            <th>Order</th>
+            <th>Exercise</th>
+            <th>Reps</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Total Workouts</td>
-            <td><%= locals.workouts.length %></td>
-          </tr>
-          <tr>
-            <td>Total Exercise Done</td>
-            <td><%= locals.totalExercises %></td>
-          </tr>
         </tbody>
       </table>
     </div>
