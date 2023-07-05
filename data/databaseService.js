@@ -84,11 +84,73 @@ function sortWorkoutsByDate(workouts) {
   });
 }
 
+function sortByName(workouts) {
+  const workoutExerciseOne = [];
+  const singleExerciseOne = [];
+
+  const workoutExerciseTwo = [];
+  const singleExerciseTwo = [];
+
+  if (workouts.length === 2) {
+    for (const exercise of workouts[0].exercises) {
+      const exerciseName = exercise.name;
+      const hasSameExercise = workouts[1].exercises.filter((e) => e.name === exerciseName);
+
+      if (hasSameExercise.length) {
+        workoutExerciseOne.push(hasSameExercise[0]);
+      } else {
+        singleExerciseOne.push(exercise);
+      }
+    }
+
+    for (const exercise of workouts[1].exercises) {
+      const exerciseName = exercise.name;
+      const hasSameExercise = workouts[0].exercises.filter((e) => e.name === exerciseName);
+
+      if (hasSameExercise.length) {
+        workoutExerciseTwo.push(hasSameExercise[0]);
+      } else {
+        singleExerciseTwo.push(exercise);
+      }
+    }
+
+    const sortFunction = function (a, b) {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    };
+
+    workoutExerciseOne.sort(sortFunction);
+    workoutExerciseTwo.sort(sortFunction);
+
+    const workoutOneResult = workoutExerciseOne.concat(singleExerciseOne);
+    const workoutTwoResult = workoutExerciseTwo.concat(singleExerciseTwo);
+
+    return [
+      {
+        type: workouts[0].type,
+        date: workouts[0].date,
+        exercises: workoutOneResult
+      },
+      {
+        type: workouts[1].type,
+        date: workouts[1].date,
+        exercises: workoutTwoResult
+      }
+    ];
+  }
+}
+
 module.exports = {
   addWorkout,
   getAll,
   getMostRegularExercises,
   getMostRepsExercises,
   getTotalExercises,
-  sortWorkoutsByDate
+  sortWorkoutsByDate,
+  sortByName
 };

@@ -47,11 +47,6 @@
             "date": "2023-07-27",
             "exercises": [
                 {
-                    "name": "Bench Press",
-                    "weight": "50",
-                    "reps": "6"
-                },
-                {
                     "name": "Incline Bench Press",
                     "weight": "30",
                     "reps": "10"
@@ -70,6 +65,11 @@
                     "name": "Triceps Cabel",
                     "weight": "40",
                     "reps": "7"
+                },
+                {
+                    "name": "Bench Press",
+                    "weight": "50",
+                    "reps": "6"
                 }
             ]
         },
@@ -130,6 +130,11 @@
             "type": "Chest & Back",
             "date": "2023-07-26",
             "exercises": [
+                {
+                    "name": "Bench Decline",
+                    "weight": "70",
+                    "reps": "8"
+                },
                 {
                     "name": "Bench Press",
                     "weight": "50",
