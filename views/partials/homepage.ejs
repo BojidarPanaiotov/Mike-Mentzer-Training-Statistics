@@ -1,25 +1,5 @@
-<% for (var i =0; i < locals.workouts.length; i++ ) { %>
-<div class="row">
-  <div class="col-12 text-center">
-    <%= locals.workouts[i].type %> <%= (i+1) %> <%= locals.workouts[i].date %>
-    <table class="styled-table">
-      <thead>
-        <tr>
-          <th>Exercise</th>
-          <th>Weight (kg)</th>
-          <th>Reps</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for (var j =0; j < locals.workouts[i].exercises.length; j++ ) { %>
-        <tr>
-          <td><%= locals.workouts[i].exercises[j].name %></td>
-          <td><%= locals.workouts[i].exercises[j].weight %></td>
-          <td><%= locals.workouts[i].exercises[j].reps %></td>
-        </tr>
-      </tbody>
-      <% } %>
-    </table>
-  </div>
-</div>
-<% } %>
+<%- include('components/workoutTable', {
+    tableHeaders: ['Exercise', 'Weight kg', 'Reps'], 
+    workouts: locals.workouts,
+    showDefaultHeader: true
+    }); %>
