@@ -12,7 +12,8 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
   const data = databaseService.getAll();
-  res.render('index', { page: 'homepage', workouts: data });
+  const workoutsSortedByDate = databaseService.sortWorkoutsByDate(data);
+  res.render('index', { page: 'homepage', workouts: workoutsSortedByDate });
 });
 
 app.get('/mentzer-program', (req, res) => {

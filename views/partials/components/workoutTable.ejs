@@ -1,31 +1,35 @@
-<% if (locals.workouts && locals.tableHeaders) { %> 
-    <% for (var i = 0; i < locals.workouts.length; i++ ) { %>
-        <% if (locals.header) { %>
-            <h2> <%= locals.header %> </h2>
-        <% } %>
+<div class="row">
+    <% if (locals.workouts && locals.tableHeaders) { %> 
+        <% for (var i = 0; i < locals.workouts.length; i++ ) { %>
+            <div class="col-4">
+                    <% if (locals.header) { %>
+                        <h2> <%= locals.header %> </h2>
+                    <% } %>
 
-        <% if (locals.showDefaultHeader) { %>
-            <h2>
-                <%= locals.workouts[i].type %> (<%= locals.workouts[i].date %>)
-            </h2>
+                    <% if (locals.showDefaultHeader) { %>
+                        <h2>
+                            <%= locals.workouts[i].type %> (<%= locals.workouts[i].date %>)
+                        </h2>
+                    <% } %>
+                    <table class="styled-table">
+                    <thead>
+                        <tr>
+                        <% for (var j =0; j < locals.tableHeaders.length; j++ ) { %>
+                            <th><%= locals.tableHeaders[j] %></th>
+                        <% } %>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var j =0; j < locals.workouts[i].exercises.length; j++ ) { %>
+                        <tr>
+                            <td><%= locals.workouts[i].exercises[j].name %></td>
+                            <td><%= locals.workouts[i].exercises[j].weight %></td>
+                            <td><%= locals.workouts[i].exercises[j].reps %></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                    </table>
+                </div>
         <% } %>
-        <table class="styled-table">
-        <thead>
-            <tr>
-            <% for (var j =0; j < locals.tableHeaders.length; j++ ) { %>
-                <th><%= locals.tableHeaders[j] %></th>
-            <% } %>
-            </tr>
-        </thead>
-        <tbody>
-            <% for (var j =0; j < locals.workouts[i].exercises.length; j++ ) { %>
-            <tr>
-                <td><%= locals.workouts[i].exercises[j].name %></td>
-                <td><%= locals.workouts[i].exercises[j].weight %></td>
-                <td><%= locals.workouts[i].exercises[j].reps %></td>
-            </tr>
-            <% } %>
-        </tbody>
-        </table>
     <% } %>
-<% } %>
+</div>
