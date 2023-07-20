@@ -91,7 +91,7 @@ function sortByName(workouts) {
     const workoutExerciseTwo = [];
     const singleExerciseTwo = [];
 
-    const processWorkout = (exercisesOne, exercisesTwo, newExerciseArray) => {
+    const processWorkout = (exercisesOne, exercisesTwo, newExerciseArray, singleExerciseArray) => {
       for (const exercise of exercisesOne) {
         const exerciseName = exercise.name;
         const hasSameExercise = exercisesTwo.filter((e) => e.name === exerciseName);
@@ -99,26 +99,13 @@ function sortByName(workouts) {
         if (hasSameExercise.length) {
           newExerciseArray.push(exercise);
         } else {
-          newExerciseArray.push(exercise);
+          singleExerciseArray.push(exercise);
         }
       }
     };
 
-    processWorkout(workouts[0].exercises, workouts[1].exercises, workoutExerciseOne);
-    processWorkout(workouts[1].exercises, workouts[0].exercises, workoutExerciseTwo);
-
-    const sortFunction = function (a, b) {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    };
-
-    workoutExerciseOne.sort(sortFunction);
-    workoutExerciseTwo.sort(sortFunction);
+    processWorkout(workouts[0].exercises, workouts[1].exercises, workoutExerciseOne, singleExerciseOne);
+    processWorkout(workouts[1].exercises, workouts[0].exercises, workoutExerciseTwo, singleExerciseTwo);
 
     const workoutOneResult = workoutExerciseOne.concat(singleExerciseOne);
     const workoutTwoResult = workoutExerciseTwo.concat(singleExerciseTwo);

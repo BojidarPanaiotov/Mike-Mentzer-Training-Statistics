@@ -54,7 +54,7 @@ $(document).ready(function () {
               }
 
               const tableRowMarkup = `
-              <tr>
+              <tr style="${!sameExercise? 'background-color: yellow;' : ''}">
                 <td>${j + 1}</td>
                 <td>${currentExercise.name}</td>
                 <td class="comparison comparison-${classToApplyForWeights}">${currentExercise.weight}</td>
