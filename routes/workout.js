@@ -34,6 +34,7 @@ router
     const workoutHelpers = require('../global/scripts/workoutHelpers');
     const preparedData = workoutHelpers.formatWorkoutData(req.body, EXERCISE_COUNT);
     databaseService.addWorkout(preparedData);
+    console.log(req.body);
     res.redirect('/');
   });
 

@@ -54,7 +54,7 @@ $(document).ready(function () {
               }
 
               const tableRowMarkup = `
-              <tr style="${!sameExercise? 'background-color: yellow;' : ''}">
+              <tr style="${!sameExercise ? 'background-color: yellow;' : ''}">
                 <td>${j + 1}</td>
                 <td>${currentExercise.name}</td>
                 <td class="comparison comparison-${classToApplyForWeights}">${currentExercise.weight}</td>
@@ -83,5 +83,17 @@ $(document).ready(function () {
     $('.js-workout-2').addClass(displayNoneClass).find('tbody').empty();
 
     $('.js-compare-workouts').prop('disabled', false);
+  });
+
+  $('.js-exercise-select').on('change', function (e) {
+    $('.js-exercise-header').text();
+    $('.js-exercises-images img').addClass(displayNoneClass);
+
+    const exerciseName = $(this).val();
+    const $exerciseImage = $(`img[data-exercise-name='${exerciseName}']`);
+    const $exerciseTitle = $('.js-exercise-header').text(exerciseName);
+
+    $exerciseImage.removeClass(displayNoneClass);
+    $exerciseTitle.removeClass(displayNoneClass);
   });
 });

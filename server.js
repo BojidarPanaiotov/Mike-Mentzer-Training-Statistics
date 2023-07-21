@@ -16,10 +16,6 @@ app.get('/', (req, res) => {
   res.render('index', { page: 'homepage', workouts: workoutsSortedByDate });
 });
 
-app.get('/mentzer-program', (req, res) => {
-  res.render('index', { page: 'program' });
-});
-
 const workout = require('./routes/workout');
 app.use('/workout', workout);
 

@@ -20,7 +20,7 @@
                     "reps": "7"
                 },
                 {
-                    "name": "Biceps Pull Downs",
+                    "name": "Pulldown Bicep Curl",
                     "weight": "40",
                     "reps": "11"
                 },
@@ -67,22 +67,22 @@
             "date": "2023-07-07",
             "exercises": [
                 {
-                    "name": "Lateral Raises",
+                    "name": "Dumbbell Lateral Raises",
                     "weight": "6",
                     "reps": "8"
                 },
                 {
-                    "name": "Reverse Dumbbell Flys",
+                    "name": "Dumbbell Reverse Flyes",
                     "weight": "6",
                     "reps": "7"
                 },
                 {
-                    "name": "Lateral Deltoids",
+                    "name": "Machine Lateral Deltoids",
                     "weight": "40",
                     "reps": "5"
                 },
                 {
-                    "name": "Biceps Pull Downs",
+                    "name": "Pulldown Bicep Curl",
                     "weight": "45",
                     "reps": "6"
                 },
@@ -144,7 +144,7 @@
                     "reps": "8"
                 },
                 {
-                    "name": "Biceps Pull Downs",
+                    "name": "Pulldown Bicep Curl",
                     "weight": "45",
                     "reps": "6"
                 },
@@ -154,7 +154,7 @@
                     "reps": "9"
                 },
                 {
-                    "name": "Sited Calf Rise",
+                    "name": "Seated Calf Rise",
                     "weight": "20",
                     "reps": "11"
                 }
@@ -196,22 +196,22 @@
             "date": "2023-07-20",
             "exercises": [
                 {
-                    "name": "Lateral Raises",
+                    "name": "Dumbbell Lateral Raises",
                     "weight": "6",
                     "reps": "11"
                 },
                 {
-                    "name": "Peck Back Shoulder",
+                    "name": "Machine Peck Back Shoulder",
                     "weight": "20",
                     "reps": "7"
                 },
                 {
-                    "name": "Lateral Deltoids",
+                    "name": "Machine Lateral Deltoids",
                     "weight": "40",
                     "reps": "6"
                 },
                 {
-                    "name": "Biceps Pull Downs",
+                    "name": "Pulldown Bicep Curl",
                     "weight": "45",
                     "reps": "7"
                 },

@@ -1,5 +1,5 @@
-<div class="row justify-content-center mt-5">
-  <div class="col-6">
+<div class="row m-5">
+  <div class="col-5">
     <form method="POST" action="/workout/add-workout">
       <div class="mb-3">
         <label for="custom-program-type" class="form-label">Program Type</label>
@@ -19,8 +19,29 @@
       <div class="row">
         <div class="col-4">
           <div class="mb-3">
-            <label for="exercise-<%= i %>" class="form-label">Exercise <%= i %> </label>
-            <input type="text" name="exercise-<%= i %>" class="form-control" id="exercise-<%= i %>" />
+            <label class="form-label" for="exercise-<%= i %>-name">Exercise</label>
+            <select class="js-exercise-select form-select" id="exercise-<%= i %>-name" name="exercise-<%= i %>">
+              <option disabled selected value> - Select Exercise - </option>
+              <optgroup label="Push">
+                <option value="Dumbbell Lateral Raises">Dumbbell Lateral Raises</option>
+                <option value="Machine Lateral Deltoids">Machine Lateral Deltoids</option>
+                <option value="Triceps Cable">Triceps Cable</option>
+                <option value="Dips">Dips</option>
+                <option value="Dumbbell Reverse Flyes">Dumbbell Reverse Flyes</option>
+                <option value="Machine Peck Back Shoulder">Machine Peck Back Shoulder</option>
+              </optgroup>
+              <optgroup label="Pull">
+                <option value="Pulldown Bicep Curl">Pulldown Bicep Curl</option>
+                <option value=""></option>
+              </optgroup>
+              <optgroup label="Legs">
+                <option value="Leg Press">Leg Press</option>
+                <option value="Leg Extension">Leg Extension</option>
+                <option value="Calf Rise">Calf Rise</option>
+                <option value="Seated Calf Rise">Seated Calf Rise</option>
+                <option value="Adductor Machine">Adductor Machine</option>
+              </optgroup>
+            </select>
           </div>
         </div>
         <div class="col-4">
@@ -38,5 +59,24 @@
 
       <button type="submit" class="btn btn-primary mt-3 mb-3">Submit</button>
     </form>
+  </div>
+  <div class="col-7">
+    <h2 class="js-exercise-header text-center d-none"></h2>
+    <div class="js-exercises-images">
+      <!-- Legs -->
+      <img class="image d-none" src="/images/Leg-Press.jpg" data-exercise-name="Leg Press"/>
+      <img class="image d-none" src="/images/Leg-Extension.jpg" data-exercise-name="Leg Extension"/>
+      <img class="image d-none" src="/images/Calf-Rise.jpg" data-exercise-name="Calf Rise"/>
+      <img class="image d-none" src="/images/Seated-Calf-Rise.jpg" data-exercise-name="Seated Calf Rise"/>
+      <img class="image d-none" src="/images/Adductor-Machine.jpg" data-exercise-name="Adductor Machine"/>
+      <!-- Push -->
+      <img class="image d-none" src="/images/Dumbbell-Lateral-Raises.jpg" data-exercise-name="Dumbbell Lateral Raises"/>
+      <img class="image d-none" src="/images/Machine-Lateral-Deltoids.jpg" data-exercise-name="Machine Lateral Deltoids"/>
+      <img class="image d-none" src="/images/Pulldown-Bicep-Curl.jpg" data-exercise-name="Pulldown Bicep Curl"/>
+      <img class="image d-none" src="/images/Triceps-Cable.jpg" data-exercise-name="Triceps Cable"/>
+      <img class="image d-none" src="/images/Dips.jpg" data-exercise-name="Dips"/>
+      <img class="image d-none" src="/images/Dumbbell-Reverse-Flyes.jpg" data-exercise-name="Dumbbell Reverse Flyes"/>
+      <img class="image d-none" src="/images/Machine-Peck-Back-Shoulder.jpg" data-exercise-name="Machine Peck Back Shoulder"/>
+    </div>
   </div>
 </div>
