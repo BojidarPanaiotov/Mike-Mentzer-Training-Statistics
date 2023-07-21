@@ -4,9 +4,9 @@
       <div class="mb-3">
         <label for="custom-program-type" class="form-label">Program Type</label>
         <select class="form-select" name="type" required>
-          <option value="Chest & Back">Chest & Back</option>
-          <option value="Legs & Abs">Legs & Abs</option>
-          <option value="Shoulders & Arms">Shoulders & Arms</option>
+          <% for (var i = 0; i < locals.ALL_EXERCISES.WORKOUT_TYPES.length; i++ ) { %>
+            <option value="<%= locals.ALL_EXERCISES.WORKOUT_TYPES[i] %>"><%= locals.ALL_EXERCISES.WORKOUT_TYPES[i] %></option>
+          <% } %>
         </select>
       </div>
 
@@ -15,7 +15,7 @@
         <input type="date" name="creation-date" class="form-control" id="creation-date" required />
       </div>
 
-      <% for (var i =1; i <= locals.exerciseCount; i++ ) { %>
+      <% for (var i = 1; i <= locals.exerciseCount; i++ ) { %>
       <div class="row">
         <div class="col-4">
           <div class="mb-3">
@@ -23,27 +23,18 @@
             <select class="js-exercise-select form-select" id="exercise-<%= i %>-name" name="exercise-<%= i %>">
               <option disabled selected value> - Select Exercise - </option>
               <optgroup label="Push">
-                <option value="Dumbbell Lateral Raises">Dumbbell Lateral Raises</option>
-                <option value="Machine Lateral Deltoids">Machine Lateral Deltoids</option>
-                <option value="Triceps Cable">Triceps Cable</option>
-                <option value="Dips">Dips</option>
-                <option value="Dumbbell Reverse Flyes">Dumbbell Reverse Flyes</option>
-                <option value="Machine Peck Back Shoulder">Machine Peck Back Shoulder</option>
-                <option value="Machine Chest Flyes">Machine Chest Flyes</option>
-                <option value="Upper Bench Press">Upper Bench Press</option>
+                <% for (var j = 0; j < locals.ALL_EXERCISES.PUSH.length; j++ ) { %>
+                  <option value="<%= locals.ALL_EXERCISES.PUSH[j] %>"><%= locals.ALL_EXERCISES.PUSH[j] %></option>
+                <% } %>
               </optgroup>
               <optgroup label="Pull">
-                <option value="Pulldown Bicep Curl">Pulldown Bicep Curl</option>
-                <option value="Pull Ups">Pull Ups</option>
-                <option value="Dead Lift">Dead Lift</option>
-                <option value="Lat Pull Down Cable">Lat Pull Down Cable</option>
-              </optgroup>
+                <% for (var k = 0; k < locals.ALL_EXERCISES.PULL.length; k++ ) { %>
+                  <option value="<%= locals.ALL_EXERCISES.PULL[k] %>"><%= locals.ALL_EXERCISES.PULL[k] %></option>
+                <% } %>
               <optgroup label="Legs">
-                <option value="Leg Press">Leg Press</option>
-                <option value="Leg Extension">Leg Extension</option>
-                <option value="Calf Rise">Calf Rise</option>
-                <option value="Seated Calf Rise">Seated Calf Rise</option>
-                <option value="Adductor Machine">Adductor Machine</option>
+                <% for (var l = 0; l < locals.ALL_EXERCISES.LEGS.length; l++ ) { %>
+                  <option value="<%= locals.ALL_EXERCISES.LEGS[l] %>"><%= locals.ALL_EXERCISES.LEGS[l] %></option>
+                <% } %>
               </optgroup>
             </select>
           </div>
@@ -68,25 +59,31 @@
     <h2 class="js-exercise-header text-center d-none"></h2>
     <div class="js-exercises-images">
       <!-- Legs -->
-      <img class="image d-none" src="/images/Leg-Press.jpg" data-exercise-name="Leg Press"/>
-      <img class="image d-none" src="/images/Leg-Extension.jpg" data-exercise-name="Leg Extension"/>
-      <img class="image d-none" src="/images/Calf-Rise.jpg" data-exercise-name="Calf Rise"/>
-      <img class="image d-none" src="/images/Seated-Calf-Rise.jpg" data-exercise-name="Seated Calf Rise"/>
-      <img class="image d-none" src="/images/Adductor-Machine.jpg" data-exercise-name="Adductor Machine"/>
+      <% for (var i = 0; i < locals.ALL_EXERCISES.LEGS.length; i++ ) { %>
+        <img 
+          class="image d-none" 
+          src="/images/<%= locals.ALL_EXERCISES.LEGS[i].split(' ').join('-') %>.jpg" 
+          data-exercise-name="<%= locals.ALL_EXERCISES.LEGS[i] %>"
+        />
+      <% } %>
+
       <!-- Push -->
-      <img class="image d-none" src="/images/Dumbbell-Lateral-Raises.jpg" data-exercise-name="Dumbbell Lateral Raises"/>
-      <img class="image d-none" src="/images/Machine-Lateral-Deltoids.jpg" data-exercise-name="Machine Lateral Deltoids"/>
-      <img class="image d-none" src="/images/Triceps-Cable.jpg" data-exercise-name="Triceps Cable"/>
-      <img class="image d-none" src="/images/Dips.jpg" data-exercise-name="Dips"/>
-      <img class="image d-none" src="/images/Dumbbell-Reverse-Flyes.jpg" data-exercise-name="Dumbbell Reverse Flyes"/>
-      <img class="image d-none" src="/images/Machine-Peck-Back-Shoulder.jpg" data-exercise-name="Machine Peck Back Shoulder"/>
-      <img class="image d-none" src="/images/Machine-Chest-Flyes.jpg" data-exercise-name="Machine Chest Flyes"/>
-      <img class="image d-none" src="/images/Upper-Bench-Press.jpg" data-exercise-name="Upper Bench Press"/>
+      <% for (var i = 0; i < locals.ALL_EXERCISES.PUSH.length; i++ ) { %>
+        <img 
+          class="image d-none" 
+          src="/images/<%= locals.ALL_EXERCISES.PUSH[i].split(' ').join('-') %>.jpg" 
+          data-exercise-name="<%= locals.ALL_EXERCISES.PUSH[i] %>"
+        />
+      <% } %>
+
       <!-- Pull -->
-      <img class="image d-none" src="/images/Pulldown-Bicep-Curl.jpg" data-exercise-name="Pulldown Bicep Curl"/>
-      <img class="image d-none" src="/images/Pull-Ups.jpg" data-exercise-name="Pull Ups"/>
-      <img class="image d-none" src="/images/Dead-Lift.jpg" data-exercise-name="Dead Lift"/>
-      <img class="image d-none" src="/images/Lat-Pull-Down-Cable.jpg" data-exercise-name="Lat Pull Down Cable"/>
+      <% for (var i = 0; i < locals.ALL_EXERCISES.PULL.length; i++ ) { %>
+        <img 
+          class="image d-none" 
+          src="/images/<%= locals.ALL_EXERCISES.PULL[i].split(' ').join('-') %>.jpg" 
+          data-exercise-name="<%= locals.ALL_EXERCISES.PULL[i] %>"
+        />
+      <% } %>
     </div>
   </div>
 </div>

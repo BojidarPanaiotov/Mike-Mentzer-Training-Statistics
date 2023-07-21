@@ -3,6 +3,7 @@ const router = express.Router();
 const databaseService = require('../data/databaseService');
 const EXERCISE_COUNT = require('../global/constants/constants').EXERCISE_COUNT;
 const TOP_EXERCISE_COUNT = require('../global/constants/constants').TOP_EXERCISE_COUNT;
+const ALL_EXERCISES = require('../global/constants/constants').ALL_EXERCISES;
 
 router.get('/workouts', function (req, res) {
   const workoutNames = req.query.workouts;
@@ -27,14 +28,15 @@ router
   .get((req, res) => {
     res.render('index', {
       page: 'forms/add-workout',
-      exerciseCount: EXERCISE_COUNT
+      exerciseCount: EXERCISE_COUNT,
+      ALL_EXERCISES: ALL_EXERCISES
     });
   })
   .post((req, res) => {
     const workoutHelpers = require('../global/scripts/workoutHelpers');
     const preparedData = workoutHelpers.formatWorkoutData(req.body, EXERCISE_COUNT);
     databaseService.addWorkout(preparedData);
-    console.log(req.body);
+
     res.redirect('/');
   });
 
