@@ -83,11 +83,29 @@ function sortWorkoutsByDate(workouts) {
   });
 }
 
+function getSingleExerciseByNameAll(name) {
+  const allWorkouts = getAll();
+  const exercisesResult = [];
+
+  for (const workout of allWorkouts) {
+    const { date, exercises } = workout;
+
+    for (const exercise of exercises) {
+      if (exercise.name.toLowerCase() == name.toLowerCase()) {
+        exercise.date = date;
+        exercisesResult.push(exercise);
+      }
+    }
+  }
+
+  return allWorkouts;
+}
+
 function sortByName(workouts) {
   if (workouts.length === 2) {
     const workoutExerciseOne = [];
     const singleExerciseOne = [];
-  
+
     const workoutExerciseTwo = [];
     const singleExerciseTwo = [];
 
@@ -131,6 +149,7 @@ module.exports = {
   getMostRegularExercises,
   getMostRepsExercises,
   getTotalExercises,
+  getSingleExerciseByNameAll,
   sortWorkoutsByDate,
   sortByName
 };
