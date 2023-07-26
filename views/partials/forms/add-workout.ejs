@@ -36,6 +36,11 @@
                   <option value="<%= locals.ALL_EXERCISES.LEGS[l] %>"><%= locals.ALL_EXERCISES.LEGS[l] %></option>
                 <% } %>
               </optgroup>
+              <optgroup label="Abs">
+                <% for (var l = 0; l < locals.ALL_EXERCISES.ABS.length; l++ ) { %>
+                  <option value="<%= locals.ALL_EXERCISES.ABS[l] %>"><%= locals.ALL_EXERCISES.ABS[l] %></option>
+                <% } %>
+              </optgroup>
             </select>
           </div>
         </div>
@@ -82,6 +87,15 @@
           class="image d-none" 
           src="/images/<%= locals.ALL_EXERCISES.PULL[i].split(' ').join('-') %>.jpg" 
           data-exercise-name="<%= locals.ALL_EXERCISES.PULL[i] %>"
+        />
+      <% } %>
+
+      <!-- Abs -->
+      <% for (var i = 0; i < locals.ALL_EXERCISES.ABS.length; i++ ) { %>
+        <img 
+          class="image d-none" 
+          src="/images/<%= locals.ALL_EXERCISES.ABS[i].split(' ').join('-') %>.jpg" 
+          data-exercise-name="<%= locals.ALL_EXERCISES.ABS[i] %>"
         />
       <% } %>
     </div>

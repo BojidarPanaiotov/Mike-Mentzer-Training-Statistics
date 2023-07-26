@@ -6,7 +6,7 @@ const ALL_EXERCISES = {
   PUSH: ['Dumbbell Lateral Raises', 'Machine Lateral Deltoids', 'Triceps Cable', 'Dumbbell Reverse Flyes', 'Machine Peck Back Shoulder', 'Machine Chest Flyes', 'Upper Bench Press'],
   PULL: ['Pulldown Bicep Curl', 'Pull Ups', 'Dead Lift', 'Lat Pull Down Cable'],
   LEGS: ['Leg Press', 'Leg Extension', 'Calf Rise', 'Seated Calf Rise', 'Adductor Machine'],
-  ABS: []
+  ABS: ['Sit Ups']
 };
 
 module.exports = {

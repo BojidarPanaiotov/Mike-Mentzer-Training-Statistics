@@ -5,7 +5,7 @@
             "date": "2023-07-02",
             "exercises": [
                 {
-                    "name": "Machine Chest Flys",
+                    "name": "Machine Chest Flyes",
                     "weight": "45",
                     "reps": "7"
                 },
@@ -129,7 +129,7 @@
             "date": "2023-07-14",
             "exercises": [
                 {
-                    "name": "Machine Chest Flys",
+                    "name": "Machine Chest Flyes",
                     "weight": "45",
                     "reps": "8"
                 },
@@ -224,6 +224,32 @@
                     "name": "Dips",
                     "weight": "0",
                     "reps": "4"
+                }
+            ]
+        },
+        {
+            "type": "Legs & Abs",
+            "date": "2023-07-23",
+            "exercises": [
+                {
+                    "name": "Leg Extension",
+                    "weight": "50",
+                    "reps": "13"
+                },
+                {
+                    "name": "Leg Press",
+                    "weight": "70",
+                    "reps": "12"
+                },
+                {
+                    "name": "Calf Rise",
+                    "weight": "45",
+                    "reps": "14"
+                },
+                {
+                    "name": "Sit Ups",
+                    "weight": "5",
+                    "reps": "15"
                 }
             ]
         }
