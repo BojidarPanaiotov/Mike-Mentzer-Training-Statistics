@@ -44,6 +44,54 @@
       </div>
     </div>
     <div class="row">
+      <div class="col-5">
+        <h2 class="text-center">Compare Single Exercise</h2>
+        <form method="POST" action="/workout/add-workout">
+          <select class="js-compare-exercises-select form-select" id="exercise-<%= i %>-name" name="exercise-<%= i %>">
+            <option disabled selected value>- Select Exercise -</option>
+            <optgroup label="Push">
+              <% for (var j = 0; j < locals.ALL_EXERCISES.PUSH.length; j++ ) { %>
+              <option value="<%= locals.ALL_EXERCISES.PUSH[j] %>"><%= locals.ALL_EXERCISES.PUSH[j] %></option>
+              <% } %>
+            </optgroup>
+            <optgroup label="Pull">
+              <% for (var k = 0; k < locals.ALL_EXERCISES.PULL.length; k++ ) { %>
+              <option value="<%= locals.ALL_EXERCISES.PULL[k] %>"><%= locals.ALL_EXERCISES.PULL[k] %></option>
+              <% } %>
+            </optgroup>
+
+            <optgroup label="Legs">
+              <% for (var l = 0; l < locals.ALL_EXERCISES.LEGS.length; l++ ) { %>
+              <option value="<%= locals.ALL_EXERCISES.LEGS[l] %>"><%= locals.ALL_EXERCISES.LEGS[l] %></option>
+              <% } %>
+            </optgroup>
+            <optgroup label="Abs">
+              <% for (var l = 0; l < locals.ALL_EXERCISES.ABS.length; l++ ) { %>
+              <option value="<%= locals.ALL_EXERCISES.ABS[l] %>"><%= locals.ALL_EXERCISES.ABS[l] %></option>
+              <% } %>
+            </optgroup>
+          </select>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="js-compare-exercises btn btn-primary mt-5">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-6">
+        <h2 class="js-exercise-result text-center"></h2>
+        <table class="js-exercise-result-table styled-table d-none">
+          <thead>
+            <tr>
+              <th>Exercise</th>
+              <th>Weight (kg)</th>
+              <th class="text-right">Reps</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    <div class="row">
       <div class="col-4">
         <h2 class="header-statistics">Top (<%= locals.regularExercises.length %>) Most Sets on Exercise</h2>
         <table class="styled-table">

@@ -96,4 +96,19 @@ $(document).ready(function () {
     $exerciseImage.removeClass(displayNoneClass);
     $exerciseTitle.removeClass(displayNoneClass);
   });
+
+  $('.js-compare-exercises').on('click', function (event) {
+    event.preventDefault();
+
+    const selectedValue = $('.js-compare-exercises-select').find(':selected').text();
+
+    $.ajax({
+      url: '/workout/exercises',
+      type: 'GET',
+      data: { exercise: selectedValue },
+      success: function (data) {
+        console.log(data);
+      }
+    });
+  });
 });

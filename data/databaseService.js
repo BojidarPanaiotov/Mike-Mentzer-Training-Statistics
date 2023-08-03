@@ -98,7 +98,7 @@ function getSingleExerciseByNameAll(name) {
     }
   }
 
-  return allWorkouts;
+  return exercisesResult;
 }
 
 function sortByName(workouts) {

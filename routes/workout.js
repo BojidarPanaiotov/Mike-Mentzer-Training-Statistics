@@ -8,9 +8,16 @@ const ALL_EXERCISES = require('../global/constants/constants').ALL_EXERCISES;
 router.get('/workouts', function (req, res) {
   const workoutNames = req.query.workouts;
   const workouts = databaseService.getAll().filter((w) => workoutNames.includes(w.type));
-  const workoutsSortedByDate = databaseService.sortWorkoutsByDate(workouts).slice(0,2);
+  const workoutsSortedByDate = databaseService.sortWorkoutsByDate(workouts).slice(0, 2);
   const workoutsSortedByName = databaseService.sortByName(workoutsSortedByDate);
   res.json({ workouts: workoutsSortedByName });
+});
+
+router.get('/exercises', function (req, res) {
+  const exerciseName = req.query.exercise;
+  const allExerciseByName = databaseService.getSingleExerciseByNameAll(exerciseName);
+
+  res.json({ exercise: allExerciseByName });
 });
 
 router.get('/statistics', (req, res) => {
@@ -19,7 +26,8 @@ router.get('/statistics', (req, res) => {
     workouts: databaseService.getAll(),
     regularExercises: databaseService.getMostRegularExercises(TOP_EXERCISE_COUNT),
     repsExercises: databaseService.getMostRepsExercises(TOP_EXERCISE_COUNT),
-    totalExercises: databaseService.getTotalExercises()
+    totalExercises: databaseService.getTotalExercises(),
+    ALL_EXERCISES: ALL_EXERCISES
   });
 });
 
