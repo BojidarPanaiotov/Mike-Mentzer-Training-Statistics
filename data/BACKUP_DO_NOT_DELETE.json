@@ -15,7 +15,7 @@
                     "reps": "3"
                 },
                 {
-                    "name": "Cable Lats",
+                    "name": "Lat Pull Down Cable",
                     "weight": "40",
                     "reps": "7"
                 },
@@ -139,7 +139,7 @@
                     "reps": "5"
                 },
                 {
-                    "name": "Cable Lats",
+                    "name": "Lat Pull Down Cable",
                     "weight": "40",
                     "reps": "8"
                 },
@@ -245,6 +245,109 @@
                     "name": "Calf Rise",
                     "weight": "45",
                     "reps": "14"
+                },
+                {
+                    "name": "Sit Ups",
+                    "weight": "5",
+                    "reps": "15"
+                }
+            ]
+        },
+        {
+            "type": "Chest & Back",
+            "date": "2023-07-27",
+            "exercises": [
+                {
+                    "name": "Machine Chest Flyes",
+                    "weight": "45",
+                    "reps": "9"
+                },
+                {
+                    "name": "Upper Bench Press",
+                    "weight": "50",
+                    "reps": "5"
+                },
+                {
+                    "name": "Lat Pull Down Cable",
+                    "weight": "40",
+                    "reps": "9"
+                },
+                {
+                    "name": "Pulldown Bicep Curl",
+                    "weight": "45",
+                    "reps": "6"
+                },
+                {
+                    "name": "Dead Lift",
+                    "weight": "100",
+                    "reps": "6"
+                },
+                {
+                    "name": "Preacher Curl Straight Bar",
+                    "weight": "22",
+                    "reps": "5"
+                }
+            ]
+        },
+        {
+            "type": "Shoulders & Arms",
+            "date": "2023-08-02",
+            "exercises": [
+                {
+                    "name": "Dumbbell Lateral Raises",
+                    "weight": "6",
+                    "reps": "13"
+                },
+                {
+                    "name": "Dumbbell Reverse Flyes",
+                    "weight": "5",
+                    "reps": "17"
+                },
+                {
+                    "name": "Machine Lateral Deltoids",
+                    "weight": "40",
+                    "reps": "7"
+                },
+                {
+                    "name": "Pulldown Bicep Curl",
+                    "weight": "45",
+                    "reps": "7"
+                },
+                {
+                    "name": "Triceps Cable",
+                    "weight": "40",
+                    "reps": "7"
+                },
+                {
+                    "name": "Dips",
+                    "weight": "0",
+                    "reps": "4"
+                }
+            ]
+        },
+        {
+            "type": "Legs & Abs",
+            "date": "2023-07-30",
+            "exercises": [
+                {
+                    "name": "Leg Extension",
+                    "weight": "50",
+                    "reps": "13"
+                },
+                {
+                    "name": "Leg Press",
+                    "weight": "70",
+                    "reps": "13"
+                },
+                {
+                    "name": "Leg Curl",
+                    "weight": "35",
+                    "reps": "7"
+                },
+                {
+                    "name": "Calf Rise",
+                    "weight": "40",
+                    "reps": "15"
                 },
                 {
                     "name": "Sit Ups",
